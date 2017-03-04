@@ -1,0 +1,62 @@
+.ecp-information {
+    position: relative;
+    padding: 8px 48px 8px 36px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.ecp-information.ecp-information-banner {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.ecp-information.ecp-information-with-description {
+    padding: 16px 48px 16px 48px;
+}
+
+.ecp-information.ecp-information-no-icon {
+    padding: 8px 48px 8px 16px;
+}
+
+.ecp-information span {
+    display: block;
+}
+
+.ecp-information.ecp-information-with-description .ecp-information-message {
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.ecp-information .fa {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 16px;
+}
+
+.ecp-information.ecp-information-with-description .fa {
+    font-size: 26px;
+}
+
+.ecp-information .ecp-information-close {
+    position: absolute;
+    top: 9px;
+    right: 16px;
+    cursor: pointer;
+}
+
+.ecp-information .ecp-information-close span {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.43);
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.ecp-information .ecp-information-close span:hover {
+    color: #404040;
+}

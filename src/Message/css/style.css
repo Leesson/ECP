@@ -1,0 +1,33 @@
+.ecp-message {
+    position: fixed;
+    top: 16px;
+    left: 0;
+    width: 100%;
+    z-index: 1031;
+    font-size: 13px;
+}
+
+.ecp-message-notice {
+    position: absolute;
+    left: 50%;
+    width: auto;
+    vertical-align: middle;
+}
+
+.ecp-message-notice-content {
+    position: relative;
+    right: 50%;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: block;
+    animation-duration: .3s;
+    -webkit-animation-duration: .3s;
+    -moz-animation-duration: .3s;
+    -o-animation-duration: .3s;
+}
+
+.ecp-message .fa {
+    margin-right: 6px;
+}

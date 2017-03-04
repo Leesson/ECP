@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECP - 基于AMD的组件库</title>
+    <link rel="icon" type="image/png" href="../assets/ecp_logo_transparent.png" >
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="libs/animate/animate.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: "微软雅黑", "Microsoft Yahei", "Pinghei", sans-serif;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="myCard" style="width: 260px; margin: 30px;">
+
+</div>
+
+<script src="libs/jquery.min.js"></script>
+<script src="libs/requirejs/require.js"></script>
+<script src="config/requireConfig.js"></script>
+<script type="text/javascript">
+    require([
+        "ecp/Card"
+    ], function (Card) {
+
+        var data = {
+            'url': '//www.baidu.com',
+            'img_url': 'assets/Compare_th.png',
+            'title': '高分影像',
+            'description': '从用户选定地址或距目标要素最近的位置提供方向从用户选定地址或距目标要素最近的位置提供方向从用户选定地址或距目标要素最近的位置提供方向',
+            'author_avatar': 'assets/blob.png',
+            'author_name': '李显',
+            'pv': '23',
+            'comments': '0'
+        };
+
+        var card = new Card('myCard', {
+            data: data,
+            theme: "green", //orange,red,blue,darkblue,lightgray,gray,aqua,green,skyblue,purple
+//            tpl: '<div class="ecp-card"><div class="ecp-card-view"><a href="{{url}}"><img class="ecp-card-img" src="{{img_url}}"></a></div></div>'
+        });
+    });
+</script>
+</body>
+</html>

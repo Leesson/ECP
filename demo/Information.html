@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECP - 基于AMD的组件库</title>
+    <link rel="icon" type="image/png" href="../assets/ecp_logo_transparent.png" >
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="libs/animate/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "微软雅黑", "Microsoft Yahei", "Pinghei", sans-serif;
+            color: #333;
+        }
+        .content {
+            width: 30%;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="content">
+    </div>
+
+<script src="libs/jquery.min.js"></script>
+<script src="libs/requirejs/require.js"></script>
+<script src="config/requireConfig.js"></script>
+<script type="text/javascript">
+    require([
+        "ecp/Information"
+    ], function (Information) {
+        var info1 = new Information("content", {
+            type: "info",
+            data: {
+                message: "最简单的消息提示"
+            }
+        });
+
+        var info2 = new Information("content", {
+            type: "success",
+            data: {
+                message: "显示图标"
+            },
+            showIcon: true
+        });
+
+        var info3 = new Information("content", {
+            type: "error",
+            data: {
+                message: "显示关闭按钮"
+            },
+            showIcon: true,
+            closable: true
+        });
+
+        var info4 = new Information("content", {
+            type: "warning",
+            data: {
+                message: "自定义关闭按钮"
+            },
+            showIcon: true,
+            closable: true,
+            closeText: "关闭"
+        });
+
+        var info5 = new Information("content", {
+            type: "info",
+            data: {
+                message: "点击关闭执行自定义函数"
+            },
+            showIcon: true,
+            closable: true,
+            onClose: function () {
+                alert("你点击了关闭按钮");
+            }
+        });
+
+        var info6 = new Information("content", {
+            type: "success",
+            data: {
+                message: "包含描述的信息提示",
+                description: "这里是描述信息 这里是描述信息 这里是描述信息 这里是描述信息 这里是描述信息"
+            },
+            showIcon: true,
+            closable: true
+        });
+
+        var info7 = new Information("content", {
+            type: "warning",
+            data: {
+                message: "警告",
+                description: "这里是描述信息 这里是描述信息 这里是描述信息 这里是描述信息 这里是描述信息"
+            }
+        });
+
+        var info8 = new Information("content", {
+            type: "error",
+            data: {
+                message: "错误",
+                description: "这里是描述信息 这里是描述信息 这里是描述信息 这里是描述信息 这里是描述信息"
+            },
+            showIcon: true,
+            closable: true,
+            closeText: "关闭"
+        });
+
+        var info9 = new Information("content", {
+            type: "warning",
+            data: {
+                message: "用作顶部公告，此时会有特殊样式"
+            },
+            showIcon: true,
+            closable: true,
+            banner: true
+        });
+    });
+</script>
+</body>
+</html>

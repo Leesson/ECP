@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECP - 基于AMD的组件库</title>
+    <link rel="icon" type="image/png" href="../assets/ecp_logo_transparent.png" >
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="libs/animate/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "微软雅黑", "Microsoft Yahei", "Pinghei", sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<input id="info" type="button" value="info"/>
+<input id="success" type="button" value="success，3秒后消失"/>
+<input id="error" type="button" value="error"/>
+<input id="warning" type="button" value="warning"/>
+<input id="loading" type="button" value="loading, 设置异步消失"/>
+<br>
+自动消失时间（单位秒）：<input id="duration" type="text" value="2"/><br>
+距离顶部距离（单位px）：<input id="top" type="text" value="16"/><br>
+<input id="config" type="button" value="全局配置"/>
+
+<script src="libs/jquery.min.js"></script>
+<script src="libs/requirejs/require.js"></script>
+<script src="config/requireConfig.js"></script>
+<script type="text/javascript">
+    require([
+        "ecp/message"
+    ], function (message) {
+        $("#info").click(function () {
+            message.info("这是消息提示");
+        });
+        $("#success").click(function () {
+            message.success("成功", 3);
+        });
+        $("#error").click(function () {
+            message.error("错误");
+        });
+        $("#warning").click(function () {
+            message.warning("警告");
+        });
+        $("#loading").click(function () {
+            var hide = message.loading("正在处理...", 0);
+
+            //异步处理完成后调用hide隐藏控件
+            setTimeout(hide, 10000);
+        });
+        
+        $("#config").click(function () {
+            message.config({
+                duration: $("#duration").val(),
+                top: $("#top").val()
+            });
+        });
+    });
+</script>
+</body>
+</html>
