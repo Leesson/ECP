@@ -71,7 +71,7 @@ define([
             var ele = null;
 
             if(typeof this.beforeRender == "function") {
-                this.beforeRender();
+                this.beforeRender(template);
             }
 
             if(this.tpl) {
@@ -102,6 +102,8 @@ define([
                     }
                 }
 
+                this.ele = ele = $ele[0];
+
                 if(typeof this.afterRender == "function") {
                     this.afterRender();
                 }
@@ -114,8 +116,6 @@ define([
                         this.ready();
                     }
                 }
-
-                ele = $ele[0];
             }
 
             return ele;
