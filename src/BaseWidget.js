@@ -22,13 +22,7 @@ define([
             this.ele = null;
 
             //verify the container
-            if(Object.prototype.toString.call(container) === "[object String]") {
-                var containerId = container;
-                container = document.getElementById(container);
-                if(!container) {
-                    throw new Error("failed to create " + this.name + " widget, can not find the element of whose id is '" + containerId + "'");
-                }
-            }
+            container = this.vertifyElement(container);
 
             this.opts = $.extend({
                 data: {},
@@ -65,6 +59,19 @@ define([
                 var random = Math.random().toString().split(".")[1].substr(0, 6);
                 this.id = this.name + "_" + random + (new Date()).getTime();
             }
+        },
+
+        //verify the container
+        vertifyElement: function (element) {
+            if(Object.prototype.toString.call(element) === "[object String]") {
+                var elementId = element;
+                element = document.getElementById(element);
+                if(!element) {
+                    throw new Error("failed to create " + this.name + " widget, can not find the element of whose id is '" + elementId + "'");
+                }
+            }
+
+            return element;
         },
 
         render: function (container, data) {
@@ -109,6 +116,7 @@ define([
                 }
 
                 if(container) {
+                    container = this.vertifyElement(container);
                     $ele.appendTo($(container));
 
                     //ready event will be triggered only when widget initialized and appended to page.
