@@ -6,7 +6,7 @@ define([
     return declare(null, {
         name: "ECP_Widget",
         tpl: null,
-        files: [require.toUrl("./BaseWidget/css/style.css")],
+        files: [],
         loadedFiles: [],
         /**
          * init widget
