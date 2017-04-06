@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECP - 基于AMD的组件库</title>
+    <link rel="icon" type="image/png" href="../assets/ecp_logo_transparent.png">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="libs/animate/animate.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: "微软雅黑", "Microsoft Yahei", "Pinghei", sans-serif;
+            color: #333;
+            background-color: #fafafa;
+            margin: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container" style="width: 260px; margin: 30px;">
+
+</div>
+
+<script src="libs/jquery.min.js"></script>
+<script src="libs/requirejs/require.js"></script>
+<script src="config/requireConfig.js"></script>
+<script type="text/javascript">
+    require([
+        "ecp/Accordion"
+    ], function (Accordion) {
+
+        var accordion = new Accordion("container", {
+            data: [
+                {
+                    title: "home",
+                    icon: '<i class="fa fa-home"></i>',
+                },
+                {
+                    title: "name",
+                    icon: '<i class="fa fa-home"></i>',
+                    label: 12,
+                    nodes: [
+                        {
+                            title: "as",
+                            icon: '<i class="fa fa-home"></i>'
+                        }
+                    ]
+                },
+                {
+                    title: "company",
+                    icon: '<i class="fa fa-home"></i>'
+                },
+                {
+                    title: "school",
+                    icon: '<i class="fa fa-home"></i>'
+                },
+                {
+                    title: "building",
+                    icon: '<i class="fa fa-home"></i>'
+                }
+            ],
+            enableSearch: true,
+            footer: "Esri China",
+            callback: function (json) {
+                console.log(json);
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

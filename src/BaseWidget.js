@@ -8,12 +8,13 @@ define([
         tpl: null,
         files: [],
         loadedFiles: [],
+        defaults: {},
         /**
          * init widget
          * @param container, if container is a dom element, the widget will be append to the element, else you can get widget dom by widget.ele
          * @param opts, Object, optional.
          *   data, Object. data to render template. see widget's template for detail.
-         *   class_name, String. add custom className to widget's root element.
+         *   className, String. add custom className to widget's root element.
          *   styles, String<css grammar>. add custom styles to widget's root element.
          *   tpl, String<html grammar>. if not empty, default tpl will be replaced. this property will affect(even disabled) other properties, such as data.
          */
@@ -26,11 +27,11 @@ define([
 
             this.opts = $.extend({
                 data: {},
-                class_name: undefined, //as the grammar of html, class names separated by space.
+                className: undefined, //as the grammar of html, class names separated by space.
                 // theme: undefined,
                 // tpl: undefined,
                 styles: undefined, //as the grammar of html, style attributes separated by semicolons.
-            }, opts || {});
+            }, this.defaults, opts || {});
 
             if(this.opts.tpl) {
                 this.tpl = this.opts.tpl;
@@ -93,8 +94,8 @@ define([
                     $ele.attr("id", this.id);
                 }
                 //add className
-                if(this.opts.class_name) {
-                    $ele.addClass(this.opts.class_name);
+                if(this.opts.className) {
+                    $ele.addClass(this.opts.className);
                 }
                 //add styles
                 if(this.opts.styles) {
