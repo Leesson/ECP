@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-<div id="container" style="width: 260px; margin: 30px;">
+<div id="container" style="width: 260px; margin: 30px; overflow: auto;">
 
 </div>
 
@@ -31,7 +31,11 @@
         "ecp/Accordion"
     ], function (Accordion) {
 
-        var accordion = new Accordion("container", {
+        var accordion = new Accordion({
+            container: "container",
+            theme: "gray-green",
+            enableSearch: true,
+            footer: "Esri China",
             data: [
                 {
                     title: "home",
@@ -61,13 +65,50 @@
                     icon: '<i class="fa fa-home"></i>'
                 }
             ],
-            enableSearch: true,
-            footer: "Esri China",
             callback: function (json) {
                 console.log(json);
             }
         });
 
+        var accordion1 = new Accordion({
+            container: "container",
+            theme: "red",
+            styles: "margin-top: 10px;",
+            enableSearch: true,
+            footer: "Esri China",
+            data: [
+                {
+                    title: "home",
+                    icon: '<i class="fa fa-home"></i>',
+                },
+                {
+                    title: "name",
+                    icon: '<i class="fa fa-home"></i>',
+                    label: 12,
+                    nodes: [
+                        {
+                            title: "as",
+                            icon: '<i class="fa fa-home"></i>'
+                        }
+                    ]
+                },
+                {
+                    title: "company",
+                    icon: '<i class="fa fa-home"></i>'
+                },
+                {
+                    title: "school",
+                    icon: '<i class="fa fa-home"></i>'
+                },
+                {
+                    title: "building",
+                    icon: '<i class="fa fa-home"></i>'
+                }
+            ],
+            callback: function (json) {
+                console.log(json);
+            }
+        });
     });
 </script>
 </body>

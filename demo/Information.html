@@ -30,14 +30,16 @@
     require([
         "ecp/Information"
     ], function (Information) {
-        var info1 = new Information("content", {
+        var info1 = new Information({
+            container: "content",
             type: "info",
             data: {
                 message: "最简单的消息提示"
             }
         });
 
-        var info2 = new Information("content", {
+        var info2 = new Information({
+            container: "content",
             type: "success",
             data: {
                 message: "显示图标"
@@ -45,7 +47,8 @@
             showIcon: true
         });
 
-        var info3 = new Information("content", {
+        var info3 = new Information({
+            container: "content",
             type: "error",
             data: {
                 message: "显示关闭按钮"
@@ -54,7 +57,8 @@
             closable: true
         });
 
-        var info4 = new Information("content", {
+        var info4 = new Information({
+            container: "content",
             type: "warning",
             data: {
                 message: "自定义关闭按钮"
@@ -64,7 +68,8 @@
             closeText: "关闭"
         });
 
-        var info5 = new Information("content", {
+        var info5 = new Information({
+            container: "content",
             type: "info",
             data: {
                 message: "点击关闭执行自定义函数"
@@ -76,7 +81,8 @@
             }
         });
 
-        var info6 = new Information("content", {
+        var info6 = new Information({
+            container: "content",
             type: "success",
             data: {
                 message: "包含描述的信息提示",
@@ -86,7 +92,8 @@
             closable: true
         });
 
-        var info7 = new Information("content", {
+        var info7 = new Information({
+            container: "content",
             type: "warning",
             data: {
                 message: "警告",
@@ -94,7 +101,8 @@
             }
         });
 
-        var info8 = new Information("content", {
+        var info8 = new Information({
+            container: "content",
             type: "error",
             data: {
                 message: "错误",
@@ -105,7 +113,8 @@
             closeText: "关闭"
         });
 
-        var info9 = new Information("content", {
+        var info9 = new Information({
+            container: "content",
             type: "warning",
             data: {
                 message: "用作顶部公告，此时会有特殊样式"

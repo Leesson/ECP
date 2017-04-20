@@ -13,7 +13,7 @@ define([
         //source file's path
         files: [require.toUrl("./EmptyWidget/css/style.css")],
 
-        constructor: function (container, opts) {
+        constructor: function (opts) {
             this.init();
         },
 

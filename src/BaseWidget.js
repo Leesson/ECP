@@ -11,19 +11,16 @@ define([
         defaults: {},
         /**
          * init widget
-         * @param container, if container is a dom element, the widget will be append to the element, else you can get widget dom by widget.ele
          * @param opts, Object, optional.
+         *   container, if container is a dom element, the widget will be append to the element, else you can get widget dom by widget.ele
          *   data, Object. data to render template. see widget's template for detail.
          *   className, String. add custom className to widget's root element.
          *   styles, String<css grammar>. add custom styles to widget's root element.
          *   tpl, String<html grammar>. if not empty, default tpl will be replaced. this property will affect(even disabled) other properties, such as data.
          */
-        constructor: function (container, opts) {
+        constructor: function (opts) {
             // this.setId();
             this.ele = null;
-
-            //verify the container
-            container = this.vertifyElement(container);
 
             this.opts = $.extend({
                 data: {},
@@ -32,6 +29,9 @@ define([
                 // tpl: undefined,
                 styles: undefined, //as the grammar of html, style attributes separated by semicolons.
             }, this.defaults, opts || {});
+
+            // container is validate util element is rendered.
+            this.container = null;
 
             if(this.opts.tpl) {
                 this.tpl = this.opts.tpl;
@@ -43,7 +43,7 @@ define([
             this.loadFile(this.files);
 
             //renderer widget dom
-            this.ele = this.render(container, this.opts.data);
+            this.ele = this.render(this.opts.container, this.opts.data);
 
             this._initExtraFunc();
         },
@@ -119,6 +119,8 @@ define([
                 if(container) {
                     container = this.vertifyElement(container);
                     $ele.appendTo($(container));
+                    // this.container is validate after widget is rendered and added to document.
+                    this.container = container;
 
                     //ready event will be triggered only when widget initialized and appended to page.
                     if(typeof this.ready == "function") {

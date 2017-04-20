@@ -12,7 +12,8 @@ define([
         //source file's path
         files: [require.toUrl("./Accordion/css/style.css")],
         defaults: {
-            theme: "green",
+            theme: undefined, //blue, green, red, white, black, default black.
+            customHtml: false,
             speed: 300,
             showDelay: 0,
             hideDelay: 0,
@@ -29,7 +30,7 @@ define([
             callback: $.noop
         },
 
-        constructor: function (container, opts) {
+        constructor: function (opts) {
             this.init();
         },
 
@@ -73,28 +74,41 @@ define([
                  */
                 item = list[i];
 
-                if(this.checkHtml(item[this.opts.iconField])) {
-                    icon = item[this.opts.iconField];
-                } else {
-                    icon = '<i class="fa fa-' + item[this.opts.iconField] + '"></i>'
-                }
+                /*if(typeof this.opts.customHtml == "function") {
+                    var $item = $(this.opts.customHtml(item));
+                    if(item[this.opts.childrenField]) {
+                        html += '<ul class="submenu">';
+                        html += this.buildHtml(item[this.opts.childrenField]);
+                        html += '</ul>';
+                        $item.append(html);
+                    }
 
-                href = this.opts["linkTo"] ? this.opts["linkTo"].replace(/__id__/, item[this.opts["identifyField"]]) : "javascript:void(0);";
+                    var $div = $('<div/>').append($item);
+                    html += $div.html();
+                } else {*/
+                    if(this.checkHtml(item[this.opts.iconField])) {
+                        icon = item[this.opts.iconField];
+                    } else {
+                        icon = '<i class="fa fa-' + item[this.opts.iconField] + '"></i>'
+                    }
 
-                html += '<li>' +
-                    '<a href="' + href + '">' + icon + item[this.opts.titleField] + '</a>';
+                    href = this.opts["linkTo"] ? this.opts["linkTo"].replace(/__id__/, item[this.opts["identifyField"]]) : "javascript:void(0);";
 
-                if(item[this.opts.labelField]) {
-                    html += '<span class="ecp-accordion-label">' + item[this.opts.labelField] + '</span>';
-                }
+                    html += '<li>' +
+                        '<a href="' + href + '">' + icon + item[this.opts.titleField] + '</a>';
 
-                if(item[this.opts.childrenField]) {
-                    html += '<ul class="submenu">';
-                    html += this.buildHtml(item[this.opts.childrenField]);
-                    html += '</ul>';
-                }
+                    if(item[this.opts.labelField]) {
+                        html += '<span class="ecp-accordion-label">' + item[this.opts.labelField] + '</span>';
+                    }
 
-                html += '</li>';
+                    if(item[this.opts.childrenField]) {
+                        html += '<ul class="submenu">';
+                        html += this.buildHtml(item[this.opts.childrenField]);
+                        html += '</ul>';
+                    }
+
+                    html += '</li>';
+                // }
             }
 
             return html;

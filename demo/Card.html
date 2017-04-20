@@ -42,9 +42,10 @@
             'comments': '0'
         };
 
-        var card = new Card('myCard', {
+        var card = new Card({
+            container: 'myCard',
             data: data,
-            theme: "green", //orange,red,blue,darkblue,lightgray,gray,aqua,green,skyblue,purple
+            theme: "orange", //orange,red,blue,darkblue,lightgray,gray,aqua,green,skyblue,purple
 //            tpl: '<div class="ecp-card"><div class="ecp-card-view"><a href="{{url}}"><img class="ecp-card-img" src="{{img_url}}"></a></div></div>'
         });
     });

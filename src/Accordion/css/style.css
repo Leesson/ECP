@@ -111,6 +111,18 @@
     position: static
 }
 
+/*.ecp-accordion ul ul.submenu:before {
+    content: '';
+    position: absolute;
+    top: -21px;
+    width: 0;
+    height: 0;
+    border-bottom: 0;
+    border-top: 11px solid #ECECEC;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+}*/
+
 .ecp-accordion ul ul.submenu li {
     clear: both;
     width: 100%
@@ -280,6 +292,11 @@
 
 .white.ecp-accordion ul ul.submenu li a {
     color: #f0f0f0
+}
+
+.white.ecp-accordion .ecp-accordion-filterinput {
+    border-color: #555;
+    color: #555;
 }
 
 .white.ecp-accordion>ul>li>a>.ink {

@@ -18,7 +18,6 @@ define([
 
         /**
          * constructor
-         * @param container
          * @param opts
          *   ...
          *   data, Object. includes: message, description.
@@ -29,7 +28,7 @@ define([
          *   showIcon, Boolean. If true, show decent icon.
          *   banner, Boolean. Whether to show as banner.
          */
-        constructor: function (container, opts) {
+        constructor: function (opts) {
             this.init();
         },
 

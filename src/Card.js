@@ -18,7 +18,7 @@ define([
          *   data, Object. see template parameters
          *   theme, string. widget's theme style.
          */
-        constructor: function (container, opts) {
+        constructor: function (opts) {
             this.init();
         },
 
