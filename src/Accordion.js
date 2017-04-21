@@ -6,7 +6,7 @@ define([
     "text!./Accordion/Widget.html"
 ], function (require, declare, template, BaseWidget, tpl) {
     return declare(BaseWidget, {
-        name: "Accordion",
+        name: "ecp.Accordion",
         //template
         tpl: tpl,
         //source file's path

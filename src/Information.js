@@ -10,7 +10,7 @@ define([
     // "i18n!./Information/nls/strings"
 ], function (require, declare, template, BaseWidget, tpl, i18n) {
     return declare(BaseWidget, {
-        name: "Information",
+        name: "ecp.Information",
         //template
         tpl: tpl,
         //source file's path

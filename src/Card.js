@@ -6,7 +6,7 @@ define([
     "text!./Card/Widget.html"
 ], function (require, declare, template, BaseWidget, tpl) {
     return declare(BaseWidget, {
-        name: "Card",
+        name: "ecp.Card",
         //template
         tpl: tpl,
         //source file's path

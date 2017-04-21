@@ -7,6 +7,7 @@ define([
     "text!./Message/Widget.html"
 ], function (require, declare, template, BaseWidget, i18n, tpl) {
     var Widget = declare(BaseWidget, {
+        name: "ecp.message",
         //template
         tpl: null, //do not renderer element when initialize the widget
         //source file's path

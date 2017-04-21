@@ -4,7 +4,8 @@ define([
     "base/artTemplate"
 ], function (require, declare, template) {
     return declare(null, {
-        name: "ECP_Widget",
+        // Widget's identification
+        name: "ecp.Widget",
         tpl: null,
         files: [],
         loadedFiles: [],
@@ -27,7 +28,7 @@ define([
                 className: undefined, //as the grammar of html, class names separated by space.
                 // theme: undefined,
                 // tpl: undefined,
-                styles: undefined, //as the grammar of html, style attributes separated by semicolons.
+                styles: undefined //as the grammar of html, style attributes separated by semicolons.
             }, this.defaults, opts || {});
 
             // container is validate util element is rendered.

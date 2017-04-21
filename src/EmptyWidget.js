@@ -7,7 +7,7 @@ define([
     "text!./EmptyWidget/Widget.html"
 ], function (require, declare, template, BaseWidget, i18n, tpl) {
     return declare(BaseWidget, {
-        name: "EmptyWidget",
+        name: "ecp.EmptyWidget",
         //template
         tpl: tpl,
         //source file's path
