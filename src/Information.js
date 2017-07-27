@@ -1,6 +1,3 @@
-/**
- * Created by Esri on 2017/2/6.
- */
 define([
     "require",
     "dojo/_base/declare",
